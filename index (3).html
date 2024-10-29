@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Calculator</title>
+    <!-- Подключение внешнего файла .js с атрибутом defer -->
+    <script src="calculator.js" defer></script>
+</head>
+<body>
+
+    <h1>Калькулятор стоимости заказа</h1>
+    <form id="order-form">
+    <label><input type="radio" name="service-type" value="type1" checked> Тип 1 (без опций и свойств)</label><br>
+    <label><input type="radio" name="service-type" value="type2"> Тип 2 (с опциями)</label><br>
+    <label><input type="radio" name="service-type" value="type3"> Тип 3 (со свойством)</label><br>
+    
+    <br><br> 
+
+    <!-- Форма для ввода данных -->
+
+        <label for="quantity">Количество товара:</label>
+        <input type="text" id="quantity" name="quantity" required>
+        <br><br>
+
+        <br><br>
+
+    
+        <div id="options-container" style="display: none;">
+        <label for="product-option">Выберите опцию товара:</label>
+        <select id="product-option" name="product-option">
+        <option value="50">Маленький</option>
+        <option value="100">Средний</option>
+        <option value="200">Большой</option>
+        </select>
+         </div>
+        <br><br>
+
+        <div id="checkbox-container" style="display: none;">
+        <p>Выберите дополнительные свойства товара:</p>
+        <label>
+        <input type="checkbox" name="product-feature" value="gift-wrap">
+         Подарочная упаковка
+        </label><br>
+         </div>
+
+        <!-- Кнопка для подсчета стоимости -->
+        <button type="submit">Рассчитать стоимость</button>
+    </form>
+
+    <h2 id="result"></h2>
+
+</body>
+</html>
